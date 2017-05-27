@@ -41,6 +41,8 @@ public class Application extends android.app.Application{
                 }
             });
         }
+
+        realm.close();
     }
 
     private void importFromCSV(Realm realm) {

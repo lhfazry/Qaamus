@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
                     matrixCursor.addRow(row);
                 }
 
+                realm.close();
+
                 mAdapter.changeCursor(matrixCursor);
 
                 return true;
@@ -122,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     //txtSpeechInput.setText(result.get(0));
-                    mSearchView.setQuery(result.get(0), true);
+                    mSearchView.setQuery(result.get(0), false);
                 }
 
                 break;
